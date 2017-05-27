@@ -1,0 +1,55 @@
+Balanced Array(27/05/17)
+
+
+
+#include <math.h>
+#include <stdio.h>
+int main(){
+ 
+      int n,i,arr[100];
+      int l_half=0, r_half=0;  
+    
+       scanf("%d",&n);
+    
+        if(n%2==0){ 
+     
+         for(i=0;i<n;i++){
+
+             scanf("%d",&arr[i]);
+         }    
+          
+       for(i=0;i<(n/2);i++){
+           
+           l_half=l_half+arr[i];    
+        }   
+          
+       for(i=n/2;i<n;i++){
+         
+           r_half=r_half+arr[i];  
+       }   
+     
+      if(l_half<r_half){
+          
+         l_half= r_half-l_half; 
+         arr[0]= arr[0]+l_half; 
+         printf("%d",l_half); 
+       }    
+          
+      else if(l_half>r_half){
+          
+          r_half = l_half-r_half; 
+          arr[n/2]=arr[n/2]+r_half;
+          printf("%d",r_half);
+      }    
+          
+      else{
+   
+         printf("0");
+        }     
+          
+    }
+      else
+       printf("Try Again!");
+    
+
+}
